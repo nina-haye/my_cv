@@ -1,0 +1,5 @@
+[04-Feb-2019 08:08:35 UTC] PHP Fatal error:  Cannot declare class Formation, because the name is already in use in /home/ubuntu/workspace/my_cv/src/Entity/Formations.php on line 13
+[04-Feb-2019 08:08:58 UTC] PHP Fatal error:  Cannot declare class Formation, because the name is already in use in /home/ubuntu/workspace/my_cv/src/Entity/Experiences.php on line 13
+[04-Feb-2019 08:09:09 UTC] PHP Fatal error:  Cannot declare class Formation, because the name is already in use in /home/ubuntu/workspace/my_cv/src/Entity/Experiences.php on line 13
+[04-Feb-2019 08:09:31 UTC] PHP Fatal error:  Class 'Symfony\Component\Validator\Constraint' not found in /home/ubuntu/workspace/my_cv/vendor/symfony/doctrine-bridge/Validator/Constraints/UniqueEntity.php on line 24
+[04-Feb-2019 08:18:08 UTC] PHP Fatal error:  Class 'Symfony\Component\Validator\Constraint' not found in /home/ubuntu/workspace/my_cv/vendor/symfony/doctrine-bridge/Validator/Constraints/UniqueEntity.php on line 24
