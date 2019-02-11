@@ -58,4 +58,25 @@ class ExperienceController extends AbstractController
             ]
         );
     }
+    
+    public function remove($id)
+    {
+        $eManager = $this->getDoctrine()->getManager();
+        $experience=$eManager->getRepository(Experience::class)->findOneBy(['id' => $id]);
+        $error=null;
+        
+        if ($experience) {
+            $eManager->remove($experience);
+            $eManager->flush();
+        } else {
+            $error="Erreur";
+        }
+        
+        return $this->render(
+            'error/error.html.twig',
+            [
+            'error' => $error,
+            ]
+        );
+    }
 }

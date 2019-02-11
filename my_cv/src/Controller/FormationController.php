@@ -58,4 +58,25 @@ class FormationController extends AbstractController
             ]
         );
     }
+    
+    public function remove($id)
+    {
+        $eManager = $this->getDoctrine()->getManager();
+        $formation=$eManager->getRepository(Formation::class)->findOneBy(['id' => $id]);
+        $error=null;
+        
+        if ($formation) {
+            $eManager->remove($formation);
+            $eManager->flush();
+        } else {
+            $error="Erreur";
+        }
+        
+        return $this->render(
+            'error/error.html.twig',
+            [
+            'error' => $error,
+            ]
+        );
+    }
 }

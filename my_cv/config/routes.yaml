@@ -44,3 +44,15 @@ edit_experience:
 edit_loisir:
     path: /edit/loisir/{id}
     controller: App\Controller\LoisirController::edit
+    
+remove_formation:
+    path: /remove/formation/{id}
+    controller: App\Controller\FormationController::remove
+    
+remove_experience:
+    path: /remove/experience/{id}
+    controller: App\Controller\ExperienceController::remove
+    
+remove_loisir:
+    path: /remove/loisir/{id}
+    controller: App\Controller\LoisirController::remove

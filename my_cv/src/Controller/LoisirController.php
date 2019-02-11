@@ -58,4 +58,15 @@ class LoisirController extends AbstractController
             ]
         );
     }
+    
+    public function remove($id)
+    {
+        $eManager = $this->getDoctrine()->getManager();
+        $loisir=$eManager->getRepository(Loisir::class)->findOneBy(['id' => $id]);
+        
+        $eManager->remove($loisir);
+        $eManager->flush();
+        
+        return $this->redirectToRoute('app_lucky_number');
+    }
 }

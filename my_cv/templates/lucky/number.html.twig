@@ -64,8 +64,17 @@
 				        	{{ experience.getLieu() }}<br/>
 				        	{{ experience.getDateDebut()  | date("y/m/d") }} -
 				        	{{ experience.getDateFin()  | date("y/m/d") }}<br/>
-				        <br/>
+				
+				<a href="{{ path('edit_experience',{ 'id':experience.getId()} )}}" target="_blank">Edite</a>
+				<a href="{{ path('remove_experience',{ 'id':experience.getId()} )}}" target="_blank">Remove</a>
+
+				<br/><br/>
+			
 				{% endfor %}
+				
+				<a href="{{path('create_experience')}}" target="_blank">Create</a>
+				<a href="{{path('valid_experience')}}" target="_blank">Valide</a>
+
 
 			</div>
 			<div class="clear"></div>
@@ -100,8 +109,16 @@
 				        	{{ formation.getLieu() }}<br/>
 				        	{{ formation.getDateDebut()  | date("y/m/d") }} -
 				        	{{ formation.getDateFin()  | date("y/m/d") }}<br/>
-				        <br/>
+				      
+					<a href="{{ path('edit_formation',{ 'id':formation.getId()} )}}" target="_blank">Edite</a>
+					<a href="{{ path('remove_formation',{ 'id':formation.getId()} )}}" target="_blank">Remove</a>
+
+					<br/><br/>
+			
 				{% endfor %}
+				
+				<a href="{{path('create_formation')}}" target="_blank">Create</a>
+				<a href="{{path('valid_formation')}}" target="_blank">Valide</a>
 			
 			</div>
 			<div class="clear"></div>
@@ -116,15 +133,22 @@
 				
 				    {% for loisir in loisirs %}
 				    	
-				        	{{ loisir.getName() }}<br/>
-				        	<i>{{ loisir.getComment() }}</i><br/> 
-				        <br/>
-				        
-				{% endfor %}
+				    	{{ loisir.getName() }}<br/>
+				        <i>{{ loisir.getComment() }}</i><br/> 
+				        <a href="{{ path('edit_loisir',{ 'id':loisir.getId()} )}}" target="_blank">Edite</a>
+						<a href="{{ path('remove_loisir',{ 'id':loisir.getId()} )}}" target="_blank">Remove</a>
+
+						<br/><br/>
+			
+					{% endfor %}
+				
+				<a href="{{path('create_loisir')}}" target="_blank">Create</a>
+				<a href="{{path('valid_loisir')}}" target="_blank">Valide</a>
 
 			</div>
 			<div class="clear"></div>
 		</section>
+		
 		
 	</div>
 </div>
