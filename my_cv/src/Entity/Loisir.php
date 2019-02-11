@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
 * @ApiResource
@@ -23,12 +24,16 @@ class Loisir {
     
     /**
     * @ORM\Column(type="string", length=255)
+    * @Assert\NotBlank
+    * @Assert\Type("string")
     */
     
     private $name;
     
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Type("string")
      */
     
     private $comment;

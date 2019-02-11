@@ -6,6 +6,7 @@ use App\Entity\Loisir;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class LoisirType extends AbstractType
 {
@@ -14,6 +15,9 @@ class LoisirType extends AbstractType
         $builder
             ->add('name')
             ->add('comment')
+            ->add('save', SubmitType::class, [
+                'attr' => ['class' => 'save'],
+            ])
         ;
     }
 
@@ -23,4 +27,6 @@ class LoisirType extends AbstractType
             'data_class' => Loisir::class,
         ]);
     }
+    
+    
 }

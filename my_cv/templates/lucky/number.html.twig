@@ -62,8 +62,8 @@
 				        	{{ experience.getEntreprise() }}<br/>
 				        	{{ experience.getPoste() }}<br/>
 				        	{{ experience.getLieu() }}<br/>
-				        	{{ experience.getDate_debut()  | date("y/m/d") }} -
-				        	{{ experience.getDate_fin()  | date("y/m/d") }}<br/>
+				        	{{ experience.getDateDebut()  | date("y/m/d") }} -
+				        	{{ experience.getDateFin()  | date("y/m/d") }}<br/>
 				        <br/>
 				{% endfor %}
 
@@ -98,8 +98,8 @@
 				{% for formation in formations %}
 				        	{{ formation.getName() }}<br/>
 				        	{{ formation.getLieu() }}<br/>
-				        	{{ formation.getDate_debut()  | date("y/m/d") }} -
-				        	{{ formation.getDate_fin()  | date("y/m/d") }}<br/>
+				        	{{ formation.getDateDebut()  | date("y/m/d") }} -
+				        	{{ formation.getDateFin()  | date("y/m/d") }}<br/>
 				        <br/>
 				{% endfor %}
 			

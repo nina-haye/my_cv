@@ -11,12 +11,36 @@ app_lucky_number:
     
 create_formation:
     path: /create/formation
-    controller: App\Controller\LuckyController::createformation
+    controller: App\Controller\FormationController::create
     
 create_experience:
     path: /create/experience
-    controller: App\Controller\LuckyController::createexperience
+    controller: App\Controller\ExperienceController::create
     
 create_loisir:
     path: /create/loisir
-    controller: App\Controller\LuckyController::createloisir
+    controller: App\Controller\LoisirController::create
+
+valid_formation:
+    path: /valid/formation
+    controller: App\Controller\FormationController::valid
+
+valid_experience:
+    path: /valid/experience
+    controller: App\Controller\ExperienceController::valid
+    
+valid_loisir:
+    path: /valid/loisir
+    controller: App\Controller\LoisirController::valid
+    
+edit_formation:
+    path: /edit/formation/{id}
+    controller: App\Controller\FormationController::edit
+
+edit_experience:
+    path: /edit/experience/{id}
+    controller: App\Controller\ExperienceController::edit
+
+edit_loisir:
+    path: /edit/loisir/{id}
+    controller: App\Controller\LoisirController::edit
