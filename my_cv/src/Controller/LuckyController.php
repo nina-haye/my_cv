@@ -4,9 +4,26 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\BCryptPasswordEncoder;
+
 use App\Entity\Formation;
 use App\Entity\Experience;
 use App\Entity\Loisir;
+use App\Entity\Skill;
+
+
+class DefaultController extends Controller
+{
+    /**
+     * @Route("/admin")
+     */
+     
+     public function admin()
+     {
+         return new Response('<html><body>Admin page ! </body></html>') ;
+     }
+}
 
 class LuckyController extends Controller
 {
@@ -18,6 +35,7 @@ class LuckyController extends Controller
         $formations = $this->getDoctrine()->getRepository(Formation::class)->findAll();
         $experiences = $this->getDoctrine()->getRepository(Experience::class)->findAll();
         $loisirs = $this->getDoctrine()->getRepository(Loisir::class)->findAll();
+        $skill = $this->getDoctrine()->getRepository(Skill::class)->findAll();
         return $this->render('/lucky/number.html.twig', array(
             'nom' => $nom,
             'prenom' => $prenom,
@@ -25,7 +43,8 @@ class LuckyController extends Controller
             
             'formations' => $formations,
             'experiences' => $experiences,
-            'loisirs' => $loisirs
+            'loisirs' => $loisirs,
+            'skills' => $skill
         ));
         
         

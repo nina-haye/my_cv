@@ -22,8 +22,8 @@
 		</div>
 		
 		<div id="name">
-			<h1 class="quickFade delayTwo">{{prenom}} {{ nom |upper}}</h1>
-			<h2 class="quickFade delayThree"> Étudiante en DUT MMI</h2>
+			<h2 style="margin-left: 0" class="quickFade delayTwo">{{prenom}} {{ nom |upper}}</h2>
+			<h3 class="quickFade delayThree"> Étudiante en DUT MMI</h3>
 		</div>
 		
 		<div id="contactDetails" class="quickFade delayFour">
@@ -65,37 +65,26 @@
 				        	{{ experience.getDateDebut()  | date("y/m/d") }} -
 				        	{{ experience.getDateFin()  | date("y/m/d") }}<br/>
 				
-				<a href="{{ path('edit_experience',{ 'id':experience.getId()} )}}" target="_blank">Edite</a>
-				<a href="{{ path('remove_experience',{ 'id':experience.getId()} )}}" target="_blank">Remove</a>
+				{% if is_granted('ROLE_ADMIN') %}
+
+					<a href="{{ path('edit_experience',{ 'id':experience.getId()} )}}" target="_blank">Edite</a>
+					<a href="{{ path('remove_experience',{ 'id':experience.getId()} )}}" target="_blank">Remove</a>
+				{% endif %}
 
 				<br/><br/>
 			
 				{% endfor %}
-				
+			
+		    {% if is_granted('ROLE_ADMIN') %}
+	
 				<a href="{{path('create_experience')}}" target="_blank">Create</a>
 				<a href="{{path('valid_experience')}}" target="_blank">Valide</a>
+			{% endif %}
 
 
 			</div>
 			<div class="clear"></div>
 		</section>
-		
-		
-		<section>
-			<div class="sectionTitle">
-				<h1>COMPETENCES</h1>
-			</div>
-			
-			<div class="sectionContent">
-				<ul class="keySkills">
-					{% for i in 1..8 %}
-					    <li>A Key Skill {{i}}</li>
-					{% endfor %}
-				</ul>
-			</div>
-			<div class="clear"></div>
-		</section>
-		
 		
 		<section>
 			<div class="sectionTitle">
@@ -105,21 +94,40 @@
 			<div class="sectionContent">
 			
 				{% for formation in formations %}
-				        	{{ formation.getName() }}<br/>
-				        	{{ formation.getLieu() }}<br/>
-				        	{{ formation.getDateDebut()  | date("y/m/d") }} -
-				        	{{ formation.getDateFin()  | date("y/m/d") }}<br/>
-				      
+				  	{{ formation.getName() }}<br/>
+				   	{{ formation.getLieu() }}<br/>
+				   	{{ formation.getDateDebut()  | date("y/m/d") }} -
+				   	{{ formation.getDateFin()  | date("y/m/d") }}<br/>
+				
+				    {% if is_granted('ROLE_ADMIN') %}
 					<a href="{{ path('edit_formation',{ 'id':formation.getId()} )}}" target="_blank">Edite</a>
 					<a href="{{ path('remove_formation',{ 'id':formation.getId()} )}}" target="_blank">Remove</a>
-
+				{% endif %}
 					<br/><br/>
 			
 				{% endfor %}
-				
+			{% if is_granted('ROLE_ADMIN') %}
 				<a href="{{path('create_formation')}}" target="_blank">Create</a>
 				<a href="{{path('valid_formation')}}" target="_blank">Valide</a>
+			{% endif %}
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>SKILLS</h1>
+			</div>
 			
+			<div class="sectionContent">
+				
+				{% for skill in skills %}
+				    	
+				    	{{ skill.getName() }}<br/>
+				    	
+				{% endfor %}
+				<br/>
+				
 			</div>
 			<div class="clear"></div>
 		</section>
@@ -130,21 +138,22 @@
 			</div>
 			
 			<div class="sectionContent">
-				
-				    {% for loisir in loisirs %}
-				    	
-				    	{{ loisir.getName() }}<br/>
-				        <i>{{ loisir.getComment() }}</i><br/> 
+				{% for loisir in loisirs %}
+					{{ loisir.getName() }}<br/>
+				    {{ loisir.getComment() }}<br/> 
+				    
+				    {% if is_granted('ROLE_ADMIN') %}
 				        <a href="{{ path('edit_loisir',{ 'id':loisir.getId()} )}}" target="_blank">Edite</a>
 						<a href="{{ path('remove_loisir',{ 'id':loisir.getId()} )}}" target="_blank">Remove</a>
-
+					{% endif %}
 						<br/><br/>
 			
 					{% endfor %}
+				{% if is_granted('ROLE_ADMIN') %}
+					<a href="{{path('create_loisir')}}" target="_blank">Create</a>
+					<a href="{{path('valid_loisir')}}" target="_blank">Valide</a>
+				{% endif %}
 				
-				<a href="{{path('create_loisir')}}" target="_blank">Create</a>
-				<a href="{{path('valid_loisir')}}" target="_blank">Valide</a>
-
 			</div>
 			<div class="clear"></div>
 		</section>

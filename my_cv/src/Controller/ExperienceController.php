@@ -63,20 +63,10 @@ class ExperienceController extends AbstractController
     {
         $eManager = $this->getDoctrine()->getManager();
         $experience=$eManager->getRepository(Experience::class)->findOneBy(['id' => $id]);
-        $error=null;
         
-        if ($experience) {
-            $eManager->remove($experience);
-            $eManager->flush();
-        } else {
-            $error="Erreur";
-        }
+        $eManager->remove($experience);
+        $eManager->flush();
         
-        return $this->render(
-            'error/error.html.twig',
-            [
-            'error' => $error,
-            ]
-        );
+        return $this->redirectToRoute('app_lucky_number');
     }
 }

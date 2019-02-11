@@ -63,20 +63,10 @@ class FormationController extends AbstractController
     {
         $eManager = $this->getDoctrine()->getManager();
         $formation=$eManager->getRepository(Formation::class)->findOneBy(['id' => $id]);
-        $error=null;
         
-        if ($formation) {
-            $eManager->remove($formation);
-            $eManager->flush();
-        } else {
-            $error="Erreur";
-        }
+        $eManager->remove($formation);
+        $eManager->flush();
         
-        return $this->render(
-            'error/error.html.twig',
-            [
-            'error' => $error,
-            ]
-        );
+        return $this->redirectToRoute('app_lucky_number');
     }
 }
