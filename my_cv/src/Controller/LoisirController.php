@@ -51,21 +51,35 @@ class LoisirController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $loisir = $entityManager->getRepository(Loisir::class)->findOneBy(['id' => $id]);
-        $form = $this->createForm(LoisirType::class, $loisir);
-        return $this->render('Loisir/create.html.twig', [
-            'entity' => $loisir,
-            'form' => $form->createView(),
-            ]
-        );
+        if($loisir) {
+            $form = $this->createForm(LoisirType::class, $loisir);
+            return $this->render('Loisir/create.html.twig', [
+                'entity' => $loisir,
+                'form' => $form->createView(),
+                ]
+            );
+        }else{
+            $error = "L'id n'existe pas" ;
+            return $this->render("Loisir/create.html.twig", [
+                'error' => $error
+                ]);
+        }
     }
     
     public function remove($id)
     {
         $eManager = $this->getDoctrine()->getManager();
         $loisir=$eManager->getRepository(Loisir::class)->findOneBy(['id' => $id]);
+        if ($loisir) {
         
-        $eManager->remove($loisir);
-        $eManager->flush();
+            $eManager->remove($loisir);
+            $eManager->flush();
+        } else {
+                $error = "L'id n'existe pas" ;
+                return $this->render("Loisir/create.html.twig", [
+                    'error' => $error
+                    ]);
+            }
         
         return $this->redirectToRoute('app_lucky_number');
     }

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <h1> Création d'un nouveau Loisir</h1>
-    {{ form_start(form, { 'action': path('valid_experience') }) }}
-    {{ form(form) }}
+    <h1> Création d'une nouvelle expérience</h1>
+    {% if form is defined %}
+        {{ form_start(form, { 'action': path('valid_experience') }) }}
+        {{ form(form) }}
+    {% endif %}
+    {% if error is defined %}
+        {{ error }}
+    {% endif %}
 </html>

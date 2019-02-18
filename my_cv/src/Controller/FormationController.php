@@ -51,12 +51,20 @@ class FormationController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $formation = $entityManager->getRepository(Formation::class)->findOneBy(['id' => $id]);
-        $form = $this->createForm(FormationType::class, $formation);
-        return $this->render('Formation/create.html.twig', [
-            'entity' => $formation,
-            'form' => $form->createView(),
-            ]
-        );
+        if($formation) {
+            $form = $this->createForm(FormationType::class, $formation);
+            return $this->render('Formation/create.html.twig', [
+                'entity' => $formation,
+                'form' => $form->createView(),
+                ]
+            );
+        } else {
+            $error = "L'id n'existe pas" ;
+            return $this->render("Formation/create.html.twig", [
+                'error' => $error
+                ]);
+        }
+        
     }
     
     public function remove($id)
@@ -64,8 +72,15 @@ class FormationController extends AbstractController
         $eManager = $this->getDoctrine()->getManager();
         $formation=$eManager->getRepository(Formation::class)->findOneBy(['id' => $id]);
         
+        if ($formation) {
         $eManager->remove($formation);
         $eManager->flush();
+        } else {
+            $error = "L'id n'existe pas" ;
+            return $this->render("Formation/create.html.twig", [
+                'error' => $error
+                ]);
+        }
         
         return $this->redirectToRoute('app_lucky_number');
     }
