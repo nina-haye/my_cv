@@ -1,8 +1,10 @@
 <?php
 namespace App\Repository;
+
 use App\Entity\Loisir;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+
 /**
  * @method Loisir|null find($id, $lockMode = null, $lockVersion = null)
  * @method Loisir|null findOneBy(array $criteria, array $orderBy = null)

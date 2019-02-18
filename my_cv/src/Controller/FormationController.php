@@ -9,14 +9,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController ;
 use App\Entity\Formation ;
 use App\Form\FormationType ;
 
-class FormationController extends AbstractController 
+class FormationController extends AbstractController
 {
     public function create()
     {
         $formation = new Formation();
         $form = $this->createForm(FormationType::class, $formation);
         
-        return $this->render('Formation/create.html.twig', [
+        return $this->render(
+            'Formation/create.html.twig',
+            [
             'entity' => $formation,
             'form' => $form->createView(),
             ]
@@ -25,12 +27,12 @@ class FormationController extends AbstractController
     
     public function valid(Request $request)
     {
-        $formation = new Formation() ; 
+        $formation = new Formation() ;
         $form = $this->createForm(FormationType::class, $formation);
     
         $form->handleRequest($request) ;
         
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $formation = $form->getData();
             
             $entityManager = $this->getDoctrine()->getManager();
@@ -40,7 +42,9 @@ class FormationController extends AbstractController
             return $this->redirectToRoute('app_lucky_number');
         }
         
-        return $this->render('Formation/create.html.twig', [
+        return $this->render(
+            'Formation/create.html.twig',
+            [
             'entity' => $formation,
             'form' => $form->createView(),
             ]
@@ -51,9 +55,11 @@ class FormationController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $formation = $entityManager->getRepository(Formation::class)->findOneBy(['id' => $id]);
-        if($formation) {
+        if ($formation) {
             $form = $this->createForm(FormationType::class, $formation);
-            return $this->render('Formation/create.html.twig', [
+            return $this->render(
+                'Formation/create.html.twig',
+                [
                 'entity' => $formation,
                 'form' => $form->createView(),
                 ]
@@ -64,7 +70,6 @@ class FormationController extends AbstractController
                 'error' => $error
                 ]);
         }
-        
     }
     
     public function remove($id)
@@ -73,8 +78,8 @@ class FormationController extends AbstractController
         $formation=$eManager->getRepository(Formation::class)->findOneBy(['id' => $id]);
         
         if ($formation) {
-        $eManager->remove($formation);
-        $eManager->flush();
+            $eManager->remove($formation);
+            $eManager->flush();
         } else {
             $error = "L'id n'existe pas" ;
             return $this->render("Formation/create.html.twig", [

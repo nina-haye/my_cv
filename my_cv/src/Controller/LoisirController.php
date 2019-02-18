@@ -9,14 +9,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController ;
 use App\Entity\Loisir ;
 use App\Form\LoisirType ;
 
-class LoisirController extends AbstractController 
+class LoisirController extends AbstractController
 {
     public function create()
     {
         $loisir = new Loisir();
         $form = $this->createForm(LoisirType::class, $loisir);
         
-        return $this->render('Loisir/create.html.twig', [
+        return $this->render(
+            'Loisir/create.html.twig',
+            [
             'entity' => $loisir,
             'form' => $form->createView(),
             ]
@@ -25,12 +27,12 @@ class LoisirController extends AbstractController
     
     public function valid(Request $request)
     {
-        $loisir = new Loisir() ; 
+        $loisir = new Loisir() ;
         $form = $this->createForm(LoisirType::class, $loisir);
     
         $form->handleRequest($request) ;
         
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $loisir = $form->getData();
             
             $entityManager = $this->getDoctrine()->getManager();
@@ -40,7 +42,9 @@ class LoisirController extends AbstractController
             return $this->redirectToRoute('app_lucky_number');
         }
         
-        return $this->render('Loisir/create.html.twig', [
+        return $this->render(
+            'Loisir/create.html.twig',
+            [
             'entity' => $loisir,
             'form' => $form->createView(),
             ]
@@ -51,14 +55,16 @@ class LoisirController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $loisir = $entityManager->getRepository(Loisir::class)->findOneBy(['id' => $id]);
-        if($loisir) {
+        if ($loisir) {
             $form = $this->createForm(LoisirType::class, $loisir);
-            return $this->render('Loisir/create.html.twig', [
+            return $this->render(
+                'Loisir/create.html.twig',
+                [
                 'entity' => $loisir,
                 'form' => $form->createView(),
                 ]
             );
-        }else{
+        } else {
             $error = "L'id n'existe pas" ;
             return $this->render("Loisir/create.html.twig", [
                 'error' => $error
@@ -71,15 +77,14 @@ class LoisirController extends AbstractController
         $eManager = $this->getDoctrine()->getManager();
         $loisir=$eManager->getRepository(Loisir::class)->findOneBy(['id' => $id]);
         if ($loisir) {
-        
             $eManager->remove($loisir);
             $eManager->flush();
         } else {
-                $error = "L'id n'existe pas" ;
-                return $this->render("Loisir/create.html.twig", [
+            $error = "L'id n'existe pas" ;
+            return $this->render("Loisir/create.html.twig", [
                     'error' => $error
                     ]);
-            }
+        }
         
         return $this->redirectToRoute('app_lucky_number');
     }

@@ -5,14 +5,14 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
 * @ApiResource
 *
 * @ORM\Entity(repositoryClass="App\Repository\ExperienceRepository")
 * @ORM\Table(name="app_experience")
 */
-class Experience {
+class Experience
+{
 
     /**
     * @ORM\Id
@@ -127,4 +127,3 @@ class Experience {
         return $this;
     }
 }
-?>

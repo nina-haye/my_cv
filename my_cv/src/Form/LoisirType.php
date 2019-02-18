@@ -27,6 +27,4 @@ class LoisirType extends AbstractType
             'data_class' => Loisir::class,
         ]);
     }
-    
-    
 }

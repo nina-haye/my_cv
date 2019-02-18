@@ -12,7 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 * @ORM\Entity(repositoryClass="App\Repository\FormationRepository")
 * @ORM\Table(name="app_formation")
 */
-class Formation {
+class Formation
+{
 
     /**
     * @ORM\Id
@@ -108,4 +109,3 @@ class Formation {
         return $this;
     }
 }
-?>

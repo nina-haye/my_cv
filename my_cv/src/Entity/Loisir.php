@@ -12,8 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 * @ORM\Entity(repositoryClass="App\Repository\LoisirRepository")
 * @ORM\Table(name="app_loisir")
 */
-class Loisir {
-
+class Loisir
+{
     /**
     * @ORM\Id
     * @ORM\Column(type="integer")
@@ -67,4 +67,3 @@ class Loisir {
         return $this;
     }
 }
-?>

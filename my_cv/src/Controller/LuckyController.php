@@ -12,21 +12,17 @@ use App\Entity\Experience;
 use App\Entity\Loisir;
 use App\Entity\Skill;
 
-
-class DefaultController extends Controller
+class LuckyController extends Controller
 {
     /**
      * @Route("/admin")
      */
      
-     public function admin()
-     {
-         return new Response('<html><body>Admin page ! </body></html>') ;
-     }
-}
-
-class LuckyController extends Controller
-{
+    public function admin()
+    {
+        return new Response('<html><body>Admin page ! </body></html>') ;
+    }
+    
     public function number()
     {
         $nom = "coupat haye";
@@ -46,8 +42,6 @@ class LuckyController extends Controller
             'loisirs' => $loisirs,
             'skills' => $skill
         ));
-        
-        
     }
     
     public function createformation()
@@ -79,4 +73,3 @@ class LuckyController extends Controller
         return $this->redirectToRoute('app_create_experience');
     }
 }
-

@@ -9,14 +9,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController ;
 use App\Entity\Experience ;
 use App\Form\ExperienceType ;
 
-class ExperienceController extends AbstractController 
+class ExperienceController extends AbstractController
 {
     public function create()
     {
         $experience = new Experience();
         $form = $this->createForm(ExperienceType::class, $experience);
         
-        return $this->render('Experience/create.html.twig', [
+        return $this->render(
+            'Experience/create.html.twig',
+            [
             'entity' => $experience,
             'form' => $form->createView(),
             ]
@@ -25,12 +27,12 @@ class ExperienceController extends AbstractController
     
     public function valid(Request $request)
     {
-        $experience = new Experience() ; 
+        $experience = new Experience() ;
         $form = $this->createForm(ExperienceType::class, $experience);
     
         $form->handleRequest($request) ;
         
-        if($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $experience = $form->getData();
             
             $entityManager = $this->getDoctrine()->getManager();
@@ -40,7 +42,9 @@ class ExperienceController extends AbstractController
             return $this->redirectToRoute('app_lucky_number');
         }
         
-        return $this->render('Experience/create.html.twig', [
+        return $this->render(
+            'Experience/create.html.twig',
+            [
             'entity' => $experience,
             'form' => $form->createView(),
             ]
@@ -51,9 +55,11 @@ class ExperienceController extends AbstractController
     {
         $entityManager = $this->getDoctrine()->getManager();
         $experience = $entityManager->getRepository(Experience::class)->findOneBy(['id' => $id]);
-        if($experience) {
-        $form = $this->createForm(ExperienceType::class, $experience);
-            return $this->render('Experience/create.html.twig', [
+        if ($experience) {
+            $form = $this->createForm(ExperienceType::class, $experience);
+            return $this->render(
+                'Experience/create.html.twig',
+                [
                 'entity' => $experience,
                 'form' => $form->createView(),
                 ]
