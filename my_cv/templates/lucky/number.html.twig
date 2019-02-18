@@ -15,6 +15,16 @@
 <![endif]-->
 </head>
 <body id="top">
+	
+<div class="navbar">
+	<a href="#">Accueil</a>
+	<a href="#experience">Expériences</a>
+	<a href="#formation">Formations</a>
+	<a href="#skill">Compétences</a>
+	<a href="#loisir">Loisirs</a>
+	<a href="#contact">Contact</a>
+</div>	
+	
 <div id="cv" class="instaFade">
 	<div class="mainDetails">
 		<div id="headshot" class="quickFade">
@@ -39,7 +49,7 @@
 	<div id="mainArea" class="quickFade delayFive">
 		<section>
 			<article>
-				<div class="sectionTitle">
+				<div class="sectionTitle" >
 					<h1>PROFIL</h1>
 				</div>
 				
@@ -51,8 +61,8 @@
 		</section>
 		
 		
-		<section>
-			<div class="sectionTitle">
+		<section id="experience">
+			<div class="sectionTitle" >
 				<h1>EXPÉRIENCES PRO</h1>
 			</div>
 			
@@ -85,7 +95,7 @@
 			<div class="clear"></div>
 		</section>
 		
-		<section>
+		<section  id="formation">
 			<div class="sectionTitle">
 				<h1>FORMATIONS</h1>
 			</div>
@@ -112,8 +122,8 @@
 			<div class="clear"></div>
 		</section>
 		
-		<section>
-			<div class="sectionTitle">
+		<section id="skill">
+			<div class="sectionTitle" >
 				<h1>SKILLS</h1>
 			</div>
 			
@@ -130,7 +140,7 @@
 			<div class="clear"></div>
 		</section>
 		
-		<section>
+		<section id="loisir">
 			<div class="sectionTitle">
 				<h1>LOISIRS</h1>
 			</div>
@@ -155,9 +165,25 @@
 			<div class="clear"></div>
 		</section>
 		
+		<section id="contact">
+			<div class="sectionTitle">
+				<h1>CONTACT</h1>
+			</div>
+			
+			<div class="sectionContent">
+				
+				
+        		{{ form_start(form, { 'action': path('valid_contact') }) }}
+        		{{ form(form) }}
+    			<a href="{{path('valid_contact')}}" target="_blank">Envoyer</a>
+    			
+			</div>
+			<div class="clear"></div>
+		</section>
 		
 	</div>
 </div>
+
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

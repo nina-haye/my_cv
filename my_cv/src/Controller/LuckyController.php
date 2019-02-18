@@ -11,6 +11,8 @@ use App\Entity\Formation;
 use App\Entity\Experience;
 use App\Entity\Loisir;
 use App\Entity\Skill;
+use App\Entity\Contact;
+use App\Form\ContactType;
 
 class LuckyController extends Controller
 {
@@ -32,6 +34,9 @@ class LuckyController extends Controller
         $experiences = $this->getDoctrine()->getRepository(Experience::class)->findAll();
         $loisirs = $this->getDoctrine()->getRepository(Loisir::class)->findAll();
         $skill = $this->getDoctrine()->getRepository(Skill::class)->findAll();
+        $con = new Contact();
+        $form = $this->createForm(ContactType::class, $con);
+        
         return $this->render('/lucky/number.html.twig', array(
             'nom' => $nom,
             'prenom' => $prenom,
@@ -40,7 +45,9 @@ class LuckyController extends Controller
             'formations' => $formations,
             'experiences' => $experiences,
             'loisirs' => $loisirs,
-            'skills' => $skill
+            'skills' => $skill,
+            'entity' => $con,
+            'form' => $form->createView(),
         ));
     }
     
@@ -72,4 +79,5 @@ class LuckyController extends Controller
         
         return $this->redirectToRoute('app_create_experience');
     }
+    
 }

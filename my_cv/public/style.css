@@ -15,6 +15,33 @@ html, body {background: #181818; font-family: 'Lato', helvetica, arial, sans-ser
 
 .clear {clear: both;}
 
+.navbar {
+	overflow: hidden;
+	background-color: #cf8a05;
+  	position: fixed;
+  	top: 0; 
+  	width: 100%; 
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #181818;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: #f3f3f3;
+  color: black;
+}
+
+
+.main {
+  margin-top: 30px;
+}
+
 p {
 	font-size: 1em;
 	line-height: 1.4em;

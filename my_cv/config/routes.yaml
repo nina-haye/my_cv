@@ -56,3 +56,7 @@ remove_experience:
 remove_loisir:
     path: /remove/loisir/{id}
     controller: App\Controller\LoisirController::remove
+
+valid_contact:
+    path: /valid/contact
+    controller: App\Controller\ContactController::valid
