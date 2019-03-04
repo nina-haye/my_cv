@@ -1,8 +1,8 @@
 # CV intéractif
 
-Un template de CV intéractif créé sous Cloud9.
+Un template de CV intéractif créé sous Cloud9
 
-##Fonctionnalités
+## Fonctionnalités
 
 * Voir le CV avec cette URL : https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/lucky/number
 * Un menu avec les différentes sections du CV permettant une navigation plus facile
