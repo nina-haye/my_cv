@@ -80,6 +80,25 @@ class ContactController extends Controller
         ]);
     }
 
+    public function valid(Request $request)
+    {
+        $contact = new Contact() ;
+        $form = $this->createForm(ContactType::class, $contact);
+    
+        $form->handleRequest($request) ;
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            $contact = $form->getData();
+            
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+        }
+            
+        return $this->redirectToRoute('app_lucky_number');
+    }
+    
+
     /**
      * @Route("/{id}", name="contact_delete", methods={"DELETE"})
      */
@@ -93,4 +112,5 @@ class ContactController extends Controller
 
         return $this->redirectToRoute('contact_index');
     }
+    
 }

@@ -172,11 +172,10 @@
 			
 			<div class="sectionContent">
 				
-				
-        		{{ form_start(form, { 'action': path('valid_contact') }) }}
-        		{{ form(form) }}
-    			<a href="{{path('valid_contact')}}" target="_blank">Envoyer</a>
-    			
+				{{ form_start(form, { 'action': path('valid_contact') }) }}
+				    {{ form_widget(form) }}
+				    <button class="btn">{{ button_label|default('Save') }}</button>
+				{{ form_end(form) }}
 			</div>
 			<div class="clear"></div>
 		</section>
