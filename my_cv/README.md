@@ -21,7 +21,7 @@ Un template de CV intéractif créé sous Cloud9
 
 Le site est responsive !
 
-# Auteur
+## Auteur
 
 * Moi : **COUPAT HAYE Nina** - *Projet d'études* - nina.haye3@gmail.com
 
