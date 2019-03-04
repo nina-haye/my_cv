@@ -1,6 +1,6 @@
 # CV intéractif
 
-Un template de CV intéractif créé sous Cloud9
+Un template de CV intéractif créé sous Cloud9.
 
 ##Fonctionnalités
 
@@ -11,9 +11,8 @@ Un template de CV intéractif créé sous Cloud9
 * Des pages touts CRUD
 * Des tests unitaires et e2e
 
-## Créé avec
+## Langages utilisés
 
-* Cloud 9
 * HTML 
 * CSS
 * PhP
@@ -24,6 +23,5 @@ Le site est responsive !
 
 # Auteur
 
-* Moi : **COUPAT HAYE Nina** - *Projet d'études*
-nina.haye3@gmail.com
+* Moi : **COUPAT HAYE Nina** - *Projet d'études* - nina.haye3@gmail.com
 
