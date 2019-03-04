@@ -1,30 +1,27 @@
+# CV intéractif
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+Un template de CV intéractif créé sous Cloud9
 
+## Fonctionnalités
 
-Hi there! Welcome to Cloud9 IDE!
+* Voir le CV avec cette URL : https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/lucky/number
+* Un menu avec les différentes sections du CV permettant une navigation plus facile
+* Un formulaire de contact
+* Un accès administrateur pour pouvoir créer, modifier, supprimer des données dans la BDD
+* Des pages touts CRUD
+* Des tests unitaires et e2e
 
-To get you started, we have created a small hello world application.
+## Langages utilisés
 
-1) Open the hello-world.php file
+* HTML 
+* CSS
+* PhP
+* Symfony
+* MySQL
 
-2) Follow the run instructions in the file's comments
+Le site est responsive !
 
-3) If you want to look at the Apache logs, check out ~/lib/apache2/log
+## Auteur
 
-And that's all there is to it! Just have fun. Go ahead and edit the code, 
-or add new files. It's all up to you! 
+* Moi : **COUPAT HAYE Nina** - *Projet d'études* - nina.haye3@gmail.com
 
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
