@@ -46,6 +46,11 @@ Le site est responsive !
  php vendor/bin/codecept run unit ExampleTest
 ```
 
+### Se connecter à l'API
+
+* https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/api
+![Capture](/my_cv/public/images/3.PNG)
+
 ## Auteur
 
 * Moi : **COUPAT HAYE Nina** - *Projet d'études* - nina.haye3@gmail.com
