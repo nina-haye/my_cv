@@ -46,12 +46,6 @@ Le site est responsive !
  php vendor/bin/codecept run unit ExampleTest
 ```
 
-### Comment vérifier si le nom et prénom se trouve sur l'accueil du CV
-
-```
- php vendor/bin/codecept run acceptance SigninCest
-```
-
 ## Auteur
 
 * Moi : **COUPAT HAYE Nina** - *Projet d'études* - nina.haye3@gmail.com
