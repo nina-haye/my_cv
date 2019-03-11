@@ -21,7 +21,13 @@ Un template de CV intéractif créé sous Cloud9
 
 Le site est responsive !
 
-## Se connecter en tant qu'administrateur
+## Se connecter 
+
+https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/lucky/number
+
+### En tant qu'administrateur
+
+https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/admin
 
 login : nina
 mot de passe : pass
