@@ -29,12 +29,28 @@ Le site est responsive !
 ### En tant qu'administrateur
 
 * https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/admin 
+![Capture](/my_cv/public/images/2.PNG)
 
 * login : nina
 
 * mot de passe : pass
 
 * puis retourner en arrière sur le premier lien, ça y est, vous êtes connecté en tant qu'administrateur !
+
+
+## Tests
+
+### Comment vérifier si l'Entity Experience fonctionne et ajoute un titre avec la fonction SetTitle
+
+```
+ php vendor/bin/codecept run unit ExampleTest
+```
+
+### Comment vérifier si le nom et prénom se trouve sur l'accueil du CV
+
+```
+ php vendor/bin/codecept run acceptance SigninCest
+```
 
 ## Auteur
 
