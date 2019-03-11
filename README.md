@@ -23,15 +23,18 @@ Le site est responsive !
 
 ## Se connecter 
 
-link : https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/lucky/number
+* https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/lucky/number
+![Capture](/my_cv/public/images/1.PNG)
 
 ### En tant qu'administrateur
 
-link : https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/admin
+* https://symfony-mizukiokami.c9users.io/my_cv/public/index.php/admin 
 
-login : nina
+* login : nina
 
-mot de passe : pass
+* mot de passe : pass
+
+* puis retourner en arrière sur le premier lien, ça y est, vous êtes connecté en tant qu'administrateur !
 
 ## Auteur
 
